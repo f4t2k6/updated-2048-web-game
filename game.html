@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="game.css">
+    <style>
+        /* Ẩn div background-game */
+        .background-game {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   
+    <video autoplay loop muted playsinline style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="background_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div ><h1>2048 Final Project</h1>
+
+    <div id="welcome-container" style="text-align: center;">
+        <div id="welcome-message"></div>
+        <div id="score-container">
+            <div id="score">Score: 0</div>
+            <div id="high-score">High Score: 0</div>
+        </div>
+    </div>
+        <div id="game-container">
+        <div id="grid"></div>
+        <div id="controls">
+            <button id="undo">Undo</button>
+            <button id="restart">Restart</button>
+        </div>
+    </div>
+    <div><p>2048 is an easy and fun puzzle game. It is played on a 4x4 grid using the arrows or W, A, S, D keys.<br>
+     Every time you press a key - all tiles slide. Tiles with the same value that bump into one-another are merged. <br>
+     If you beat the game and would like to master it, try to finish with a smaller score.
+     It would mean that you finished with less moves.</p>
+    <div><h2> @ALL COPYRIGHT RESERVED BY GROUP 8</h2></div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

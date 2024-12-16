@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>2048 Login Page</title>
+</head>
+
+<body>
+    <div class="background-blur"></div>
+    <div class="container" id="container">
+        <div class="container" id="container">
+
+
+
+            <div class="form-container sign-up">
+                <form id="sign-up-form" onsubmit="registerUser(event)">
+                    <h1>Create Account</h1>
+                    <div class="social-icons"></div>
+                    <span>or use your email for registration</span>
+                    <input type="text" id="sign-up-name" placeholder="Name" required>
+                    <input type="email" id="sign-up-email" placeholder="Email" required>
+                    <input type="password" id="sign-up-password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+            
+
+
+            <div class="form-container sign-in">
+                <form id="sign-in-form" onsubmit="loginUser(event)">
+                    <h1>Sign In</h1>
+                    <div class="social-icons"></div>
+                    <span>by using your email and password</span>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <a href="#" id="forget-password" class="forget-password-link">Forget Your Password?</a>                    
+                    <button>Sign In</button>
+                </form>
+            </div>
+                  
+            
+
+            <div id="resetModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2>Reset Password</h2>
+                    <form id="resetForm">
+                        <input type="email" id="reset-email" placeholder="Email" required>
+                        <input type="password" id="new-password" placeholder="New Password" required>
+                        <input type="password" id="confirm-password" placeholder="Confirm New Password" required>
+                        <button type="submit">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Already have an account?</h1>
+                        <p>Sign in and enter the game!</p>
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>GOURP 8</h1>   
+                        <h1>PROJECT 2048</h1>   
+                        <p>Don't have account yet? </p>
+                        <p> Register to create an account for the game</p>
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

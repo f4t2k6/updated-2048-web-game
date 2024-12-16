@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: Montserrat;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125vh;
+    margin: 0;
+}
+
+#score {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #333;
+}
+
+#high-score {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #333;
+}
+
+#header h1 {
+    font-size: 100px; /* Kích thước phông chữ lớn */
+    font-weight: bold; /* Làm cho phông chữ đậm */
+    color: #333; /* Màu chữ */
+    margin: 0 190px; /* Khoảng cách trên và dưới */
+    text-align: center; /* Căn giữa */
+}
+
+#header h2 {
+    font-size: 100px; /* Kích thước phông chữ lớn */
+    font-weight: bold; /* Làm cho phông chữ đậm */
+    color: #333; /* Màu chữ */
+    margin: 0 190px; /* Khoảng cách trên và dưới */
+    text-align: center; /* Căn giữa */
+}
+
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Cascadia Mono;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 10px;
+    background-color: #e9dbcd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Bóng lớn hơn và đậm hơn */
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: black;
+    transition: all 0.2s ease; /* Hiệu ứng chuyển động */
+}
+
+.tile[data-value="0"] { background-color: #ffffff; }
+.tile[data-value="2"] { background-color: #ffe6eb; }
+.tile[data-value="4"] { background-color: #ffc2cc; }
+.tile[data-value="8"] { background-color: #ffa3b3; }
+.tile[data-value="16"] { background-color: #ff889d; }
+.tile[data-value="32"] { background-color: #ff6c86; }
+.tile[data-value="64"] { background-color: #ff4f70; }
+.tile[data-value="128"] { background-color: #ff325a; }
+.tile[data-value="256"] { background-color: #ff1744; }
+.tile[data-value="512"] { background-color: #ff0033; }
+.tile[data-value="1024"] { background-color: #e6002e; }
+.tile[data-value="2048"] { background-color: #cc0029; }
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(222,165,164); /* Màu nền cho nút */
+    color: #fff; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc cho nút */
+    cursor: pointer; /* Hiệu ứng con trỏ khi di chuột */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Bóng lớn hơn và đậm hơn */
+}
+
+button:hover {
+    background-color: rgb(196, 145, 145); /* Màu nền khi di chuột vào nút */
+}
+
+button:active {
+    background-color: rgb(159, 115, 115); /* Màu nền khi nhấn nút */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Chiếm toàn bộ chiều cao của viewport */
+    margin: 0;
+}
+p, h2 {
+    text-align: center; /* Căn giữa văn bản */
+}
+
+#welcome-container {
+    display: flex;
+    flex-direction: column; /* Xếp chồng các phần tử */
+    align-items: center; /* Căn giữa các phần tử */
+    margin-bottom: 20px; /* Khoảng cách dưới cùng */
+}
+
+#score-container {
+    display: flex;
+    justify-content: space-between; /* Căn giữa không gian giữa các điểm số */
+    width: 100%; /* Đảm bảo chiều rộng đầy đủ */
+    max-width: 300px; /* Giới hạn chiều rộng nếu cần */
+}
+
+#score, #high-score {
+    margin: 0 10px; /* Khoảng cách giữa hai dòng điểm số */
+    font-size: 18px; /* Kích thước chữ cho điểm số */
+}
