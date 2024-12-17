@@ -67,7 +67,20 @@ body {
     align-items: center;
     font-size: 40px;
     color: black;
-    transition: all 0.2s ease; /* Hiệu ứng chuyển động */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Chỉ định cụ thể để có hiệu ứng chuyển động */
+}
+
+.move-animation {
+    animation: slide 0.25s forwards;
+}
+
+@keyframes slide {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
 }
 
 .tile[data-value="0"] { background-color: #ffffff; }

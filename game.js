@@ -54,12 +54,16 @@ function addRandomTile() {
 function draw() {
     const grid = document.getElementById('grid');
     grid.innerHTML = '';
-    board.forEach(row => {
-        row.forEach(value => {
+    board.forEach((row, i) => {
+        row.forEach((value, j) => {
             const tile = document.createElement('div');
             tile.classList.add('tile');
-            tile.setAttribute('data-value', value); // Thêm thuộc tính data-value
+            tile.setAttribute('data-value', value);
             tile.textContent = value !== 0 ? value : '';
+
+            // Cập nhật vị trí sử dụng transform
+            tile.style.transform = `translate(${j * 0}px, ${i * 0}px)`; // Giả sử kích thước ô là 80px với khoảng cách 10px
+
             grid.appendChild(tile);
         });
     });
@@ -142,7 +146,8 @@ function move(direction) {
     if (moved) {
         addRandomTile();
         draw();
-        
+        applyAnimation();  // Gọi hàm để áp dụng animation
+
         // Kiểm tra tình trạng thua
         if (isGameOver()) {
             alert("Game Over! No more moves available.");
@@ -151,6 +156,19 @@ function move(direction) {
     }
 }
 
+function applyAnimation() {
+    const tiles = document.querySelectorAll('.tile');
+    tiles.forEach(tile => {
+        const value = parseInt(tile.getAttribute('data-value'));
+        if (value !== 0) { // Chỉ áp dụng animation cho ô không có giá trị 0
+            tile.classList.add('move-animation');
+            // Xóa lớp animation sau khi animation hoàn thành
+            tile.addEventListener('animationend', () => {
+                tile.classList.remove('move-animation');
+            }, { once: true });
+        }
+    });
+}
 
 function saveState() {
     previousBoard = board.map(row => row.slice());
